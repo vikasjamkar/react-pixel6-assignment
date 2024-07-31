@@ -1,0 +1,20 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6px 30px;
+	border-bottom: 1px solid lightgrey;
+}
+header img{
+	width: 55px;
+	height: 55px;
+}
+header span{
+	color: rgb(214, 71, 19);
+}

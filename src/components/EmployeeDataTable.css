@@ -1,0 +1,30 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+main{
+	padding: 50px 50px;
+}
+.filter_container{
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 0px;
+}
+.filter_container h3{
+	font-weight: 600;
+}
+.filter_select_box{
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+.funnel_icon{
+	color: rgb(214, 71, 19);
+}
+
+.table_container{
+	border: 1px solid lightgrey;
+	border-radius: 20px;
+}
