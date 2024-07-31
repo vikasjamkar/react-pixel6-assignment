@@ -6,8 +6,6 @@ import sortIcon from "../assets/images/icon.svg";
 
 import "./EmployeeDataTable.css";
 
-// Used a react-Data-table-component Plugin
-
 // Define columns name and displaying value in specific column row for Data table
 const columns = [
   {
@@ -71,7 +69,6 @@ const EmployeeDataTable = () => {
 
   const baseUrl = "https://dummyjson.com"; // baseurl api for employee data
 
-  // On component mount Phase
   useEffect(() => {
     axios
       .get(`${baseUrl}/users`)
@@ -79,20 +76,19 @@ const EmployeeDataTable = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, []); //empty dependencies means render only once
+  }, []);
 
-  // When component is update is states it will render
   useEffect(() => {
     let filterEmployeeData = data; //filter variable with assign data state value
 
     if (country) {
       filterEmployeeData = data.filter(
-        (employee) => employee.address.country === country //return array of object filter country data
+        (employee) => employee.address.country === country //return array of object filtered employee data with its country
       );
     }
     if (gender) {
       filterEmployeeData = data.filter(
-        (employee) => employee.gender === gender //return array of object filter male or female gender data
+        (employee) => employee.gender === gender //return array of object filter male or female employee data
       );
     }
     setFilterData(filterEmployeeData); // update filter data into filterData state
@@ -101,7 +97,7 @@ const EmployeeDataTable = () => {
       ...new Set(data.map((employee) => employee.address.country)), //getting unique countries from data and set to the countryData  state
     ]);
     setGenderData([...new Set(data.map((employee) => employee.gender))]); //getting unique genders from data and set to the genderData state
-  }, [country, gender, data]); // update component when passing state is changes or update
+  }, [country, gender, data]);
 
   // Country Filter Function
   const countryFilter = (e) => {
